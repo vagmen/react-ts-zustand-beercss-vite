@@ -1,5 +1,6 @@
 import { useStore } from "../../store";
 import { BeerCard } from "../BeerCard/BeerCard";
+import { Grid } from "../Grid/Grid";
 import styles from "./Beers.module.css";
 
 export const Beers = () => {
@@ -7,13 +8,7 @@ export const Beers = () => {
 
   return (
     <div>
-      <div className="grid">
-        {beers.map((beer) => (
-          <div className="s12 m6 l3" key={beer.id}>
-            <BeerCard beer={beer} />
-          </div>
-        ))}
-      </div>
+      <Grid items={beers} buildGridItem={(beer) => <BeerCard beer={beer} />} />
       {!allElementsReceived && (
         <div className={styles.loaderContainer}>
           <a className="loader large"></a>
