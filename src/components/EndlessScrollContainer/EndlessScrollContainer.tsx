@@ -25,7 +25,6 @@ export const EndlessScrollContainer = ({
     return () => {
       window.removeEventListener("scroll", scrollAndResizeHandler, true);
       window.removeEventListener("resize", scrollAndResizeHandler, true);
-      // clearPassages();
     };
   }, []);
 

@@ -1,6 +1,7 @@
 import "./App.css";
 import { Beers } from "./components/Beers/Beers";
 import { EndlessScrollContainer } from "./components/EndlessScrollContainer/EndlessScrollContainer";
+import { Header } from "./components/Header/Header";
 import { Toast } from "./components/Toast/Toast";
 import { MIN_REQUEST_INTERVAL, SCROLL_DISTANCE_TO_END } from "./constants";
 import { useStore } from "./store";
@@ -10,7 +11,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Test project</h1>
+      <Header />
       <EndlessScrollContainer
         onLoadItems={getBeersIfNeeded}
         count={beers.length}

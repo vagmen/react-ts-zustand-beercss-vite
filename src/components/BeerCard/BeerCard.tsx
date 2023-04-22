@@ -7,16 +7,16 @@ interface IBeerCard {
 
 export const BeerCard = ({ beer }: IBeerCard) => {
   return (
-    <article className="no-padding round fill ">
+    <article className="border round primary-container">
       <img
-        className={`responsive small top-round ${styles["beer-card-image"]}`}
+        className={`responsive medium top-round ${styles["beer-card-image"]}`}
         src={beer.image_url}
         loading="lazy"
         alt={beer.name}
       />
-      <div className="padding">
+      <div>
         <h5>{beer.name}</h5>
-        <p>{beer.description}</p>
+        <p className={styles.description}>{beer.description}</p>
       </div>
     </article>
   );
