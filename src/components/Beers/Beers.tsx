@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useStore } from "../../store";
+import { BeerCard } from "../BeerCard/BeerCard";
 
 export const Beers = () => {
-  const { beers, getBeers, loading, error } = useStore();
+  const { beers, getBeers, loading, error, page } = useStore();
 
   useEffect(() => {
-    getBeers();
+    getBeers({ page });
   }, []);
 
   if (loading) {
@@ -17,10 +18,12 @@ export const Beers = () => {
   }
 
   return (
-    <>
+    <div className="grid">
       {beers.map((beer) => (
-        <p key={beer.id}>{beer.name}</p>
+        <div className="s12 m6 l3" key={beer.id}>
+          <BeerCard beer={beer} />
+        </div>
       ))}
-    </>
+    </div>
   );
 };

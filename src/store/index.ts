@@ -1,22 +1,24 @@
 import { create } from "zustand";
 import { IBeer } from "../interfaces";
-import { getBeers } from "../api";
+import { IGetBeersProps, getBeers } from "../api";
 
 type State = {
   beers: IBeer[];
   loading: boolean;
-  getBeers: () => Promise<void>;
+  getBeers: (props: IGetBeersProps) => Promise<void>;
   error: string | null;
+  page: number;
 };
 
 export const useStore = create<State>((set) => ({
   loading: false,
   error: null,
   beers: [],
-  getBeers: async () => {
+  page: 0,
+  getBeers: async (props) => {
     set({ loading: true });
     try {
-      const response = await getBeers();
+      const response = await getBeers(props);
       set({ beers: response.data });
     } catch (error: any) {
       set({ error: error.message });
