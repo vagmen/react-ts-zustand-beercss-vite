@@ -1,22 +1,10 @@
 #root {
-  /* max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center; */
   height: 100%;
   overflow: hidden;
+  width: 100%;
 }
-
-/* .card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
 
 .container {
-  /* padding: 16px; */
   height: 100%;
   display: grid;
   grid-template-rows: auto 1fr;

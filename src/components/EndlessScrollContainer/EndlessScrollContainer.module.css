@@ -1,3 +1,4 @@
 .scrollable {
   overflow: auto;
+  padding: 16px;
 }

@@ -1,0 +1,11 @@
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.skeleton {
+  background: #ddd;
+  height: 300px;
+  width: 100%;
+  border-radius: 32px;
+}
