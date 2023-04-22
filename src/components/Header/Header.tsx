@@ -10,6 +10,8 @@ export const Header = () => {
 
   const handleNameChange = (name: string) => setName(name);
 
+  const clearName = () => setName("");
+
   return (
     <nav className="padding">
       <i className="extra primary-text">sports_bar</i>
@@ -19,13 +21,19 @@ export const Header = () => {
         <i>search</i>
         <input
           type="text"
+          value={beerName}
           onChange={(event) => handleNameChange(event.target.value)}
         />
         <label>Поиск по названию</label>
+        {beerName && (
+          <button
+            className="transparent circle absolute right top large"
+            onClick={clearName}
+          >
+            <i>clear</i>
+          </button>
+        )}
       </div>
-      <button className="transparent circle large">
-        <i>filter_list</i>
-      </button>
     </nav>
   );
 };

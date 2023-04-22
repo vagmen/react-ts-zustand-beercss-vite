@@ -8,4 +8,9 @@ export interface IBeer {
   abv: number;
   // горечь
   ibu: number;
+  // цвет. чем больше, тем темнее
+  ebc: number;
+  srm: number;
+  ph: number;
+  attenuation_level: number;
 }
