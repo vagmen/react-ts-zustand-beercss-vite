@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useStore } from "../../store";
+import styles from "./Header.module.css";
 
 export const Header = () => {
   const { beerName, reset, setName } = useStore();
@@ -13,11 +14,12 @@ export const Header = () => {
   const clearName = () => setName("");
 
   return (
-    <nav className="padding">
-      <i className="extra primary-text">sports_bar</i>
-      <h1>Test project</h1>
-      <div className="max"></div>
-      <div className="field label prefix round border">
+    <div className={styles.container}>
+      <div className={styles.logo}>
+        <i className="extra primary-text">sports_bar</i>
+        <h1>AppName</h1>
+      </div>
+      <div className="field label prefix suffix round border">
         <i>search</i>
         <input
           type="text"
@@ -34,6 +36,6 @@ export const Header = () => {
           </button>
         )}
       </div>
-    </nav>
+    </div>
   );
 };
